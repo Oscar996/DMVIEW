@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+
+#Entrando no diretorio root para efetua as instalacoes
+cd /root
+
 #Download do arquivo de instalacao MongoDB
 curl -kLJO https://download.datacom.com.br/ftp/produtos/DmView/Database_MongoDB/Linux/Linux/64/mongodb-linux-x86_64-rhel70-3.4.13.tgz
 
@@ -77,6 +81,9 @@ mkdir -p /data/db
 #Inicializacao do MongoDb
 #mongod
 echo "Instalacao MongoDB finalizada."
+
+#Voltar ao diretorio inicial
+cd /root
 
 #Instalacao dependencia DMView
 yum install java -y \
