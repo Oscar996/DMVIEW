@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 #Download do arquivo de instalacao MongoDB
 curl -kLJO https://download.datacom.com.br/ftp/produtos/DmView/Database_MongoDB/Linux/Linux/64/mongodb-linux-x86_64-rhel70-3.4.13.tgz
@@ -35,6 +35,8 @@ rpm -Uvh oracle-xe-11.2.0-1.0.x86_64.rpm \
 printf '\8080\n1521\nnms\nnms\ny\n' | /etc/init.d/oracle-xe configure \
 && echo "Configuracao do Oracle concluida." || echo "Falha na configuracao do Oracle"
 
+#Sair do diretorio atual
+cd ..
 
 #Configuracao do ulimit para o bom funcionamento do MongoDB
 ulimit -f unlimited
@@ -54,7 +56,7 @@ yum install libcurl openssl xz-libs -y \
 
 #Copiar o arquivo para o diretorio opt e extrair o MongoDB
 cp mongodb-linux-x86_64-rhel70-3.4.13.tgz /opt/
-cd /opt/
+cd /opt
 tar -zxvf mongodb-linux-x86_64-rhel70-3.4.13.tgz /
 && echo "Extracao  efetuada no diretorio definido." || echo "Falha na extracao no diretorio definido."
 
@@ -73,7 +75,7 @@ ln -s /opt/mongodb/bin/* /usr/bin
 mkdir -p /data/db
 
 #Inicializacao do MongoDb
-mongod
+#mongod
 echo "Instalacao MongoDB finalizada."
 
 #Instalacao dependencia DMView
