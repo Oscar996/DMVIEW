@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 #Download do arquivo de instalacao MongoDB
 curl -kLJO https://download.datacom.com.br/ftp/produtos/DmView/Database_MongoDB/Linux/Linux/64/mongodb-linux-x86_64-rhel70-3.4.13.tgz
@@ -30,9 +30,11 @@ cd Disk1
 rpm -Uvh oracle-xe-11.2.0-1.0.x86_64.rpm \
 && echo "Instalacao do Oracle concluida." || echo "Falha na instalacao do Oracle"
 
+
 #Configuracao Oracle
 printf '\8080\n1521\nnms\nnms\ny\n' | /etc/init.d/oracle-xe configure \
 && echo "Configuracao do Oracle concluida." || echo "Falha na configuracao do Oracle"
+
 
 #Configuracao do ulimit para o bom funcionamento do MongoDB
 ulimit -f unlimited
@@ -49,10 +51,12 @@ ulimit -a \
 yum install libcurl openssl xz-libs -y \
 && echo "Dependencias do MongoDB instaladas" || echo "Falha no download de dependencias do MongoDB."
 
+
 #Copiar o arquivo para o diretorio opt e extrair o MongoDB
-cp mongodb-linux-x86_64-rhel70-3.4.13.tgz /opt
-cd /opt
-tar -zxvf mongodb-linux-x86_64-rhel70-3.4.13.tgz
+cp mongodb-linux-x86_64-rhel70-3.4.13.tgz /opt/
+cd /opt/
+tar -zxvf mongodb-linux-x86_64-rhel70-3.4.13.tgz /
+&& echo "Extracao  efetuada no diretorio definido." || echo "Falha na extracao no diretorio definido."
 
 #Renomear a pasta extraida e definir permissao de execucao
 mv mongodb-linux-x86_64-rhel70-3.4.13 mongodb
@@ -78,8 +82,7 @@ yum install java -y \
 
 #*Verificar como realizar este procedimento
 #Inicializacao da instalacao do DMView
-Java –jar 010.0001.93-DmView-10.1.0-4-linux-20180808130157.jar –
-console \
+java -jar 010.0001.94-DmView-11.0.1-5-linux-20210805203535.jar -console \
 && echo "Instalacao e configuracao do DmView concluida." || echo "Falha no processo de instalacao do DMview"
 
 #Inicia os servicos do DMView
