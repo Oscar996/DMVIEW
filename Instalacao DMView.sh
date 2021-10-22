@@ -82,7 +82,6 @@ echo "Instalacao MongoDB finalizada."
 yum install java -y \
 && echo "Instalacao de dependencias do DMview concluida." || echo "Falha na instalacao de dependencias DmView"
 
-#*Verificar como realizar este procedimento
 #Inicializacao da instalacao do DMView
 java -jar 010.0001.94-DmView-11.0.1-5-linux-20210805203535.jar -console \
 && echo "Instalacao e configuracao do DmView concluida." || echo "Falha no processo de instalacao do DMview"
