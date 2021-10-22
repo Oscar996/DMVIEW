@@ -90,7 +90,7 @@ yum install java -y \
 && echo "Instalacao de dependencias do DMview concluida." || echo "Falha na instalacao de dependencias DmView"
 
 #Inicializacao da instalacao do DMView
-java -jar 010.0001.94-DmView-11.0.1-5-linux-20210805203535.jar -console \
+printf '1\n1\n/opt/DmView\no\n1\ny\n1\ny\ny\ny\n1\n/opt/DmView/jdk1.8.0_121\n1\n1\n1\n1\nxe\nnms\n1521\n1\n1\n1\njdbc:oracle:thin:@localhost:1521:XE\nnms\nnms\nnms\n1\n/u01/app/oracle/oradata/XE\n1\n27017\nnms\nnms\nnms\n1\n1\n1\n' | java -jar 010.0001.94-DmView-11.0.1-5-linux-20210805203535.jar -console \
 && echo "Instalacao e configuracao do DmView concluida." || echo "Falha no processo de instalacao do DMview"
 
 #Inicia os servicos do DMView
