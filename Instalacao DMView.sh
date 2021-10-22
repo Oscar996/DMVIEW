@@ -57,7 +57,7 @@ yum install libcurl openssl xz-libs -y \
 #Copiar o arquivo para o diretorio opt e extrair o MongoDB
 cp mongodb-linux-x86_64-rhel70-3.4.13.tgz /opt/
 cd /opt
-tar -zxvf mongodb-linux-x86_64-rhel70-3.4.13.tgz /
+tar -zxvf mongodb-linux-x86_64-rhel70-3.4.13.tgz \
 && echo "Extracao  efetuada no diretorio definido." || echo "Falha na extracao no diretorio definido."
 
 #Renomear a pasta extraida e definir permissao de execucao
