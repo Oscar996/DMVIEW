@@ -1,5 +1,5 @@
 # DMVIEW
-Instalação do DMVIEW no CentOS 8
+Instalação do DMVIEW no CentOS 7.9
 
 Copiar e colar no terminal
 
