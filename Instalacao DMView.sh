@@ -5,13 +5,12 @@
 cd /root
 
 #Download do arquivo de instalacao MongoDB
-curl -kLJO https://download.datacom.com.br/ftp/produtos/DmView/Database_MongoDB/Linux/Linux/64/mongodb-linux-x86_64-rhel70-3.4.13.tgz
-
+curl -kLJO https://download.datacom.com.br/ftp/produtos/DmView/Database_MongoDB/Linux/64/4.4/MongoDB_4_4-Red_Hat_8.zip
 #Download do arquivo de instalacao Oracle
-curl -kLJO https://download.datacom.com.br/ftp/produtos/DmView/Database_Oracle_Instaladores/oracle-xe-11.2.0-1.0.Linuxx86_64.rpm.zip
-
+curl -kLJO https://download.datacom.com.br/ftp/produtos/DmView/Database_Oracle_Instaladores/linux/oracle-database-preinstall-21c-1.0-1.el8.x86_64.rpm
+curl -kLJO https://download.datacom.com.br/ftp/produtos/DmView/Database_Oracle_Instaladores/linux/oracle-database-xe-21c-1.0-1.ol8.x86_64.rpm
 #Download do arquivo de instalacao DMView
-curl -kLJO https://download.datacom.com.br/ftp/produtos/DmView/DmView_Instaladores/DmView_11/Linux/010.0001.94-DmView-11.0.1-5-linux-20210805203535.jar
+curl -kLJO https://download.datacom.com.br/ftp/produtos/DmView/DmView_Instaladores/DmView_11.5/Linux/DmView-11.5.0-2-linux.AppImage
 
 echo "Downloads finalizados."
 
@@ -23,16 +22,18 @@ cat /etc/hosts \
 && echo "Hostnames verificados" || echo "Hostnames nao encontrados"
 
 #Instalacao dos requisitos para o Oracle
-yum install glibc make binutils gcc libaio bc flex unzip -y \
+yum install bind-utils glibc-devel ksh net-tools nfs-utils policycoreutils-python psmisc smartmontools sysstat unzip xorg-x11-utils xorg-x11-xauth -y \
 && echo "Download de dependencias do Oracle concluido" || echo "Falha no download de dependencias do Oracle"
 
 #Descompactacao do Oracle
-unzip oracle-xe-11.2.0-1.0.Linuxx86_64.rpm.zip
-cd Disk1
+#unzip oracle-xe-11.2.0-1.0.Linuxx86_64.rpm.zip
+#cd Disk1
 
 #Execucao do Instalador do Oracle
-rpm -Uvh oracle-xe-11.2.0-1.0.x86_64.rpm \
+rpm -Uvh oracle-database-preinstall-21c-1.0-1.el7.x86_64.rpm \
 && echo "Instalacao do Oracle concluida." || echo "Falha na instalacao do Oracle"
+
+##So far so good
 
 
 #Configuracao Oracle
