@@ -1,5 +1,5 @@
 # DMVIEW
-Instalação do DMVIEW no Rocky Linux 8
+Script de instalação do DMView no Rocky Linux 8
 
 Efetua o download dos pacotes, extrai, instala e configura bancos, e instala a aplicação.
 Senha definida para o Oracle DB:
@@ -7,9 +7,9 @@ Senha definida para o Oracle DB:
 ```
 9Xk7V9YX
 ```
-Realizar a subistituição em ambientes de produção.
+Realizar a substituição da senha em ambientes de produção.
 
-Efetuar como usuário root:
+Executar como usuário root:
 
 Copiar e colar no terminal
 
